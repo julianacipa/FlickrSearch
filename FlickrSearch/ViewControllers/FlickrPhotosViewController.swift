@@ -94,6 +94,8 @@ extension FlickrPhotosViewController: FlickrPhotosViewModelDelegate {
     }
     
     func showError(_ message: String) {
+        removeActivityIndicator()
+        
         let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertController.Style.alert)
         
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in

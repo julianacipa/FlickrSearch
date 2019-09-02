@@ -6,39 +6,47 @@
 //  Copyright © 2019 Juliana Cipa. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
 class FlickrPhoto {
-    var thumbnail: UIImage?
+    @objc dynamic var thumbnail: UIImage?
     
-    var description: String
-    var authorId: String
-    var dateTaken: String
-    var title: String
-    var author: String
-    var media: String
-    var mediaLink: String
+    @objc dynamic var description: String
+    @objc dynamic var authorId: String
+    @objc dynamic var dateTaken: Date
+    @objc dynamic var title: String
+    @objc dynamic var author: String
+    @objc dynamic var mediaLink: String
+    @objc dynamic var media: String
     
-    init?(withData photoObject:[String: AnyObject]) {
-        guard let descriptionData = photoObject["description"] as? String,
-            let authorIdData = photoObject["author_id"] as? String,
-            let dateTakenData = photoObject["date_taken"] as? String,
-            let titleData = photoObject["title"] as? String,
-            let authorData = photoObject["author"] as? String,
-            let mediaLinkData = photoObject["link"] as? String,
-            let mediaObjects = photoObject["media"] as? [String: AnyObject],
-            let mediaData = mediaObjects["m"] as? String
-            else {
-                return nil
-        }
+    init(description:String,
+         authorId: String,
+         author: String,
+         dateTaken: Date,
+         title: String,
+         mediaLink: String,
+         mediaArray: [String: String]) {
         
-        self.description = descriptionData
-        self.authorId = authorIdData
-        self.dateTaken = dateTakenData
-        self.title = titleData
-        self.author = authorData
-        self.media = mediaData
-        self.mediaLink = mediaLinkData
+        self.description = description
+        self.authorId = authorId
+        self.dateTaken = dateTaken
+        self.title = title
+        self.author = author
+        self.mediaLink = mediaLink
+        self.media = mediaArray.values.first ?? ""
+        
+        loadImage()
+    }
+    
+    convenience init(imageData: FlickrImageData) {
+        self.init(description: imageData.description,
+                  authorId: imageData.authorId,
+                  author: imageData.author,
+                  dateTaken: imageData.dateTaken,
+                  title: imageData.title,
+                  mediaLink: imageData.mediaLink,
+                  mediaArray: imageData.media)
     }
     
     func flickrImageURL() -> URL? {
@@ -46,5 +54,13 @@ class FlickrPhoto {
             return url
         }
         return nil
+    }
+    
+    func loadImage() {
+        if let url = flickrImageURL(),
+            let imageData = try? Data(contentsOf: url as URL),
+            let image = UIImage(data: imageData) {
+            thumbnail = image
+        }
     }
 }
