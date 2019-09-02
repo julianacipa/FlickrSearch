@@ -47,9 +47,4 @@ class FlickrPhoto {
         }
         return nil
     }
-    
-    enum Error: Swift.Error {
-        case invalidURL
-        case noData
-    }
 }
