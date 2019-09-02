@@ -19,7 +19,7 @@ class FlickrPhotoCell: UICollectionViewCell {
         
         self.imageView.image = flickrPhoto.thumbnail
         self.titleLabel.text = flickrPhoto.title
-        self.authorLabel.text = flickrPhoto.author.substringBetweenParenthesis()
+        self.authorLabel.text = "by " + flickrPhoto.author.substringBetweenParenthesis()
         self.dateTakenLabel.text = flickrPhoto.dateTaken.shortReadableString()
     }
 }
