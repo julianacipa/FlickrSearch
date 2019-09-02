@@ -14,7 +14,8 @@ class FlickrService {
         case generic
     }
     
-    func searchFlickr(for searchTerm: String, completion: @escaping (Result<FlickrSearchResults>) -> Void) {
+    func searchFlickr(for searchTerm: String,
+                      completion: @escaping (Result<FlickrSearchResults>) -> Void) {
         guard let searchURL = flickrSearchURL(for: searchTerm) else {
             completion(Result.error(Error.unknownAPIResponse))
             return
