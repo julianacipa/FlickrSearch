@@ -69,7 +69,7 @@ class FlickrPhotosViewModel {
     
     struct FlickrViewConstants {
         static let reuseIdentifier = "FlickrCell"
-        static let sectionInsets = UIEdgeInsets(top: 25.0, left: 10.0, bottom:10.0, right: 20.0)
+        static let sectionInsets = UIEdgeInsets(top: 10.0, left: 20.0, bottom:0.0, right: 20.0)
         static let itemsPerRow: CGFloat = 1
     }
     
