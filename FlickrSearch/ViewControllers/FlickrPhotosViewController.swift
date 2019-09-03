@@ -8,35 +8,19 @@
 
 import UIKit
 
+protocol MainViewDelegate: class {
+    func resetSegmentedControl()
+}
+
 final class FlickrPhotosViewController: UICollectionViewController {
     
     var viewModel: FlickrPhotosViewModel!
-    
-    let activityIndicator = UIActivityIndicatorView(style: .gray)
+    weak var mainDelegate: MainViewDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         viewModel = FlickrPhotosViewModel(delegate: self)
-    }
-}
-
-// MARK: - Text Field Delegate
-extension FlickrPhotosViewController : UITextFieldDelegate {
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        
-        textField.addSubview(activityIndicator)
-        
-        activityIndicator.frame = textField.bounds
-        activityIndicator.startAnimating()
-        
-        self.viewModel.searchForPhotos(withSearchWord: textField.text!)
-        
-        textField.text = nil
-        textField.resignFirstResponder()
-        
-        return true
     }
 }
 
@@ -85,23 +69,33 @@ extension FlickrPhotosViewController : UICollectionViewDelegateFlowLayout {
 // MARK: - FlickrPhotosViewModelDelegate
 extension FlickrPhotosViewController: FlickrPhotosViewModelDelegate {
     
-    func removeActivityIndicator() {
-        activityIndicator.removeFromSuperview()
-    }
-    
     func refreshUI() {
         self.collectionView?.reloadData()
     }
     
     func showError(_ message: String) {
-        removeActivityIndicator()
-        
         let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertController.Style.alert)
         
-        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
             alert.removeFromParent()
         }))
         
         self.present(alert, animated: true, completion: nil)
+    }
+}
+
+extension FlickrPhotosViewController: MainViewControllerDelegate {
+    
+    func searchTermEntered(searchTerm: String) {
+        self.viewModel.searchForPhotos(withSearchWord: searchTerm)
+        self.mainDelegate?.resetSegmentedControl()
+    }
+    
+    func sortImagesByRecentSelected() {
+        self.viewModel.sortImagesByRecent()
+    }
+    
+    func sortImagesByOldestSelected() {
+        self.viewModel.sortImagesByOldest()
     }
 }

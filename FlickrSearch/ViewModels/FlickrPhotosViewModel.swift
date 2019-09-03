@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 
 protocol FlickrPhotosViewModelDelegate: class {
-    func removeActivityIndicator()
     func refreshUI()
     func showError(_ message: String)
 }
@@ -18,7 +17,7 @@ protocol FlickrPhotosViewModelDelegate: class {
 class FlickrPhotosViewModel {
     private var flickrService = FlickrService()
     private weak var delegate: FlickrPhotosViewModelDelegate?
-    private var searches: [FlickrSearchResults] = []
+    private var searches: [FlickrPhoto] = []
     
     init(delegate: FlickrPhotosViewModelDelegate) {
         self.delegate = delegate
@@ -29,13 +28,11 @@ class FlickrPhotosViewModel {
     
     func searchForPhotos(withSearchWord term: String) {
         flickrService.searchFlickr(for: term) { searchResults in
-            self.delegate?.removeActivityIndicator()
-            
             switch searchResults {
             case .error(let error) :
                 self.delegate?.showError(error.localizedDescription)
             case .results(let results):
-                self.update(withNewSearches: results)
+                self.update(withNewSearches: results.searchResults)
                 self.delegate?.refreshUI()
             }
         }
@@ -43,14 +40,14 @@ class FlickrPhotosViewModel {
     
     // MARK: - Search updates
     
-    func searchesToDisplay() -> [FlickrSearchResults]  {
+    func searchesToDisplay() -> [FlickrPhoto]  {
         return searches
     }
     
-    func update(withNewSearches searchResults: FlickrSearchResults) {
+    func update(withNewSearches searchResults: [FlickrPhoto]) {
         clearSearches()
         
-        self.searches.insert(searchResults, at: 0)
+        self.searches = searchResults
     }
     
     func clearSearches() {
@@ -58,11 +55,26 @@ class FlickrPhotosViewModel {
     }
     
     var numberOfSearchResults: Int {
-        return (searches.count == 0) ? 0 : searches[0].searchResults.count
+        return searches.count
     }
     
     func photo(for indexPath: IndexPath) -> FlickrPhoto {
-        return searches[indexPath.section].searchResults[indexPath.row]
+        return searches[indexPath.row]
+    }
+    
+    // MARK: - Sort
+    func sortImagesByRecent() {
+        let sortedSearches = searches.sorted(by: { $0.dateTaken > $1.dateTaken })
+        
+        update(withNewSearches: sortedSearches)
+        delegate?.refreshUI()
+    }
+    
+    func sortImagesByOldest() {
+        let sortedSearches = searches.sorted(by: { $0.dateTaken < $1.dateTaken })
+        
+        update(withNewSearches: sortedSearches)
+        delegate?.refreshUI()
     }
     
     // MARK: - CollectionView updates

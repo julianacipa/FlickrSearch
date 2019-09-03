@@ -28,6 +28,7 @@
 		B923E37E231D5C2700789346 /* FlickrParseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B923E37D231D5C2700789346 /* FlickrParseTests.swift */; };
 		B923E385231D6CA300789346 /* Date+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B923E384231D6CA300789346 /* Date+extensions.swift */; };
 		B923E387231D719700789346 /* String+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B923E386231D719700789346 /* String+extensions.swift */; };
+		B923E389231DD1A100789346 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B923E388231DD1A100789346 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		B923E37D231D5C2700789346 /* FlickrParseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrParseTests.swift; sourceTree = "<group>"; };
 		B923E384231D6CA300789346 /* Date+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+extensions.swift"; sourceTree = "<group>"; };
 		B923E386231D719700789346 /* String+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+extensions.swift"; sourceTree = "<group>"; };
+		B923E388231DD1A100789346 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +153,7 @@
 		B923E356231D066400789346 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				B923E388231DD1A100789346 /* MainViewController.swift */,
 				B923E357231D066400789346 /* FlickrPhotosViewController.swift */,
 			);
 			path = ViewControllers;
@@ -330,6 +333,7 @@
 				B923E387231D719700789346 /* String+extensions.swift in Sources */,
 				B923E35E231D066E00789346 /* FlickrSearchResults.swift in Sources */,
 				B923E374231D3F0200789346 /* FlickrServiceError.swift in Sources */,
+				B923E389231DD1A100789346 /* MainViewController.swift in Sources */,
 				B923E363231D067700789346 /* FlickrService.swift in Sources */,
 				B923E37C231D525500789346 /* FlickrSearchResponse.swift in Sources */,
 				B923E359231D066400789346 /* FlickrPhotoCell.swift in Sources */,

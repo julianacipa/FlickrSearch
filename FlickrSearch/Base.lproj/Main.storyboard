@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -14,7 +15,7 @@
             <objects>
                 <collectionViewController id="uSH-PT-Kpi" customClass="FlickrPhotosViewController" customModule="FlickrSearch" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="2b2-6e-uVt">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="503"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bjh-N1-9Kx">
@@ -24,58 +25,63 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FlickrCell" id="rFq-gE-21U" customClass="FlickrPhotoCell" customModule="FlickrSearch" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="FlickrCell" id="rFq-gE-21U" customClass="FlickrPhotoCell" customModule="FlickrSearch" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QQG-i0-XDh">
-                                            <rect key="frame" x="20" y="0.0" width="335" height="167"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QQG-i0-XDh">
+                                            <rect key="frame" x="20" y="0.0" width="335" height="199"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RNg-1T-fPs">
-                                            <rect key="frame" x="20" y="186.5" width="335" height="20.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Title " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RNg-1T-fPs">
+                                            <rect key="frame" x="20" y="206.5" width="335" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S2Q-H0-liQ">
-                                            <rect key="frame" x="20" y="216" width="335" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S2Q-H0-liQ">
+                                            <rect key="frame" x="20" y="236" width="335" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date taken: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z2F-i9-Ltx">
-                                            <rect key="frame" x="20" y="245" width="335" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Date taken: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z2F-i9-Ltx">
+                                            <rect key="frame" x="20" y="265" width="335" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fnr-pH-dho">
+                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fnr-pH-dho">
                                             <rect key="frame" x="0.0" y="298" width="375" height="2"/>
                                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <accessibility key="accessibilityConfiguration" label="Border">
+                                                <accessibilityTraits key="traits" notEnabled="YES"/>
+                                            </accessibility>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="2" id="BB3-KV-yof"/>
+                                            </constraints>
                                         </view>
                                     </subviews>
                                 </view>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="RNg-1T-fPs" secondAttribute="trailing" constant="20" id="1nD-Zp-1JM"/>
-                                    <constraint firstItem="Z2F-i9-Ltx" firstAttribute="leading" secondItem="S2Q-H0-liQ" secondAttribute="leading" id="25l-At-GlI"/>
-                                    <constraint firstAttribute="bottom" secondItem="Z2F-i9-Ltx" secondAttribute="bottom" constant="34" id="8Y8-ZB-Rs8"/>
-                                    <constraint firstAttribute="trailing" secondItem="QQG-i0-XDh" secondAttribute="trailing" constant="20" id="KB7-n6-Rfu"/>
-                                    <constraint firstItem="fnr-pH-dho" firstAttribute="top" secondItem="Z2F-i9-Ltx" secondAttribute="bottom" constant="32" id="Mhf-48-O2t"/>
-                                    <constraint firstItem="QQG-i0-XDh" firstAttribute="leading" secondItem="rFq-gE-21U" secondAttribute="leading" constant="20" id="O9B-ko-UV8"/>
-                                    <constraint firstItem="S2Q-H0-liQ" firstAttribute="top" secondItem="RNg-1T-fPs" secondAttribute="bottom" constant="9" id="OEn-un-dob"/>
-                                    <constraint firstItem="Z2F-i9-Ltx" firstAttribute="top" secondItem="S2Q-H0-liQ" secondAttribute="bottom" constant="8" id="X5R-fd-hLk"/>
-                                    <constraint firstAttribute="trailing" secondItem="fnr-pH-dho" secondAttribute="trailing" id="XGQ-Kr-Ycx"/>
-                                    <constraint firstItem="QQG-i0-XDh" firstAttribute="top" secondItem="rFq-gE-21U" secondAttribute="top" id="Z4c-dJ-hRF"/>
-                                    <constraint firstItem="fnr-pH-dho" firstAttribute="leading" secondItem="rFq-gE-21U" secondAttribute="leading" id="cwI-Oa-g3o"/>
-                                    <constraint firstItem="S2Q-H0-liQ" firstAttribute="trailing" secondItem="RNg-1T-fPs" secondAttribute="trailing" id="k33-mP-bCz"/>
-                                    <constraint firstAttribute="bottom" secondItem="fnr-pH-dho" secondAttribute="bottom" id="kk3-JP-JZC"/>
-                                    <constraint firstItem="Z2F-i9-Ltx" firstAttribute="trailing" secondItem="S2Q-H0-liQ" secondAttribute="trailing" id="lbM-Ro-bIg"/>
-                                    <constraint firstItem="S2Q-H0-liQ" firstAttribute="leading" secondItem="RNg-1T-fPs" secondAttribute="leading" id="nMx-2b-Jlp"/>
-                                    <constraint firstItem="RNg-1T-fPs" firstAttribute="top" secondItem="QQG-i0-XDh" secondAttribute="bottom" constant="19.5" id="tWd-ky-a9r"/>
-                                    <constraint firstItem="RNg-1T-fPs" firstAttribute="leading" secondItem="rFq-gE-21U" secondAttribute="leading" constant="20" id="uza-HM-PBY"/>
+                                    <constraint firstItem="QQG-i0-XDh" firstAttribute="top" secondItem="rFq-gE-21U" secondAttribute="top" id="3ee-Vk-yr4"/>
+                                    <constraint firstAttribute="bottom" secondItem="QQG-i0-XDh" secondAttribute="bottom" constant="115" id="5C8-FN-p2Q"/>
+                                    <constraint firstAttribute="bottom" secondItem="fnr-pH-dho" secondAttribute="bottom" id="Pqe-ne-np3"/>
+                                    <constraint firstAttribute="trailing" secondItem="QQG-i0-XDh" secondAttribute="trailing" constant="20" id="QRf-Xv-8NO"/>
+                                    <constraint firstItem="fnr-pH-dho" firstAttribute="leading" secondItem="rFq-gE-21U" secondAttribute="leading" id="RXf-ij-sNR"/>
+                                    <constraint firstItem="QQG-i0-XDh" firstAttribute="leading" secondItem="rFq-gE-21U" secondAttribute="leading" constant="20" id="Rr0-Nb-nme"/>
+                                    <constraint firstAttribute="bottom" secondItem="Z2F-i9-Ltx" secondAttribute="bottom" constant="14" id="TLq-Zc-Grt"/>
+                                    <constraint firstItem="Z2F-i9-Ltx" firstAttribute="top" secondItem="S2Q-H0-liQ" secondAttribute="bottom" constant="8" id="V9F-QH-cTe"/>
+                                    <constraint firstAttribute="trailing" secondItem="Z2F-i9-Ltx" secondAttribute="trailing" constant="20" id="YQi-gZ-32N"/>
+                                    <constraint firstItem="Z2F-i9-Ltx" firstAttribute="leading" secondItem="rFq-gE-21U" secondAttribute="leading" constant="20" id="Zzi-Dg-IIi"/>
+                                    <constraint firstItem="RNg-1T-fPs" firstAttribute="leading" secondItem="S2Q-H0-liQ" secondAttribute="leading" id="eOB-43-TXV"/>
+                                    <constraint firstItem="S2Q-H0-liQ" firstAttribute="top" secondItem="RNg-1T-fPs" secondAttribute="bottom" constant="9" id="f4v-qM-IXc"/>
+                                    <constraint firstItem="S2Q-H0-liQ" firstAttribute="leading" secondItem="Z2F-i9-Ltx" secondAttribute="leading" id="fbA-jU-slZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="fnr-pH-dho" secondAttribute="trailing" id="i9u-hY-2h7"/>
+                                    <constraint firstItem="RNg-1T-fPs" firstAttribute="trailing" secondItem="S2Q-H0-liQ" secondAttribute="trailing" id="jzK-HF-fOG"/>
+                                    <constraint firstItem="S2Q-H0-liQ" firstAttribute="trailing" secondItem="Z2F-i9-Ltx" secondAttribute="trailing" id="kCe-my-2ei"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="authorLabel" destination="S2Q-H0-liQ" id="Zrh-Ix-Sne"/>
@@ -106,7 +112,65 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h59-RB-qOo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="880.79999999999995" y="792.95352323838085"/>
+            <point key="canvasLocation" x="1901.5999999999999" y="792.95352323838085"/>
+        </scene>
+        <!--Flickr Photo Gallery-->
+        <scene sceneID="RqU-fH-N4F">
+            <objects>
+                <viewController id="9PR-9N-hKP" customClass="MainViewController" customModule="FlickrSearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="blE-r9-kin">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oqp-ld-KJk">
+                                <rect key="frame" x="0.0" y="164" width="375" height="503"/>
+                                <connections>
+                                    <segue destination="uSH-PT-Kpi" kind="embed" id="9h9-uh-4fm"/>
+                                </connections>
+                            </containerView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="lpK-Ly-ylD">
+                                <rect key="frame" x="110.5" y="128" width="154" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="154" id="PzD-n1-RS1"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Recent"/>
+                                    <segment title="Oldest"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentedControlValueChanged" destination="9PR-9N-hKP" eventType="valueChanged" id="ERR-oc-Fj3"/>
+                                </connections>
+                            </segmentedControl>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="fmb-RG-Pt6">
+                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="9PR-9N-hKP" id="Gyj-lk-btB"/>
+                                </connections>
+                            </searchBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fmb-RG-Pt6" firstAttribute="top" secondItem="8fI-ml-0zm" secondAttribute="top" id="5Tz-Zm-UIK"/>
+                            <constraint firstItem="oqp-ld-KJk" firstAttribute="leading" secondItem="8fI-ml-0zm" secondAttribute="leading" id="8UP-ma-N2T"/>
+                            <constraint firstItem="8fI-ml-0zm" firstAttribute="bottom" secondItem="oqp-ld-KJk" secondAttribute="bottom" id="Jn8-Rn-0ft"/>
+                            <constraint firstItem="fmb-RG-Pt6" firstAttribute="leading" secondItem="8fI-ml-0zm" secondAttribute="leading" id="a85-me-fQN"/>
+                            <constraint firstItem="oqp-ld-KJk" firstAttribute="top" secondItem="8fI-ml-0zm" secondAttribute="top" constant="100" id="cfr-Gh-iTV"/>
+                            <constraint firstItem="8fI-ml-0zm" firstAttribute="trailing" secondItem="oqp-ld-KJk" secondAttribute="trailing" id="ghz-WC-7Ab"/>
+                            <constraint firstItem="lpK-Ly-ylD" firstAttribute="top" secondItem="fmb-RG-Pt6" secondAttribute="bottom" constant="8" id="h2s-nw-miO"/>
+                            <constraint firstItem="8fI-ml-0zm" firstAttribute="trailing" secondItem="fmb-RG-Pt6" secondAttribute="trailing" id="kPS-3x-2ME"/>
+                            <constraint firstItem="lpK-Ly-ylD" firstAttribute="centerX" secondItem="8fI-ml-0zm" secondAttribute="centerX" id="lpf-K9-GxI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8fI-ml-0zm"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Flickr Photo Gallery" id="ao4-TK-sIs"/>
+                    <connections>
+                        <outlet property="sortingSegmentedControl" destination="lpK-Ly-ylD" id="5tW-ru-Ebh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mvg-rC-ak0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1013.6" y="792.95352323838085"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pHp-xo-ZG5">
@@ -119,7 +183,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="uSH-PT-Kpi" kind="relationship" relationship="rootViewController" id="i1E-P1-QWH"/>
+                        <segue destination="9PR-9N-hKP" kind="relationship" relationship="rootViewController" id="6NB-O0-gNH"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WdP-4w-Zsu" userLabel="First Responder" sceneMemberID="firstResponder"/>
