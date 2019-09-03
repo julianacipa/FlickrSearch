@@ -29,6 +29,8 @@
 		B923E385231D6CA300789346 /* Date+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B923E384231D6CA300789346 /* Date+extensions.swift */; };
 		B923E387231D719700789346 /* String+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B923E386231D719700789346 /* String+extensions.swift */; };
 		B923E389231DD1A100789346 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B923E388231DD1A100789346 /* MainViewController.swift */; };
+		B923E38B231E3FBC00789346 /* UIImageView+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B923E38A231E3FBC00789346 /* UIImageView+extensions.swift */; };
+		B923E392231E42C600789346 /* UIImageViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B923E391231E42C600789346 /* UIImageViewTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +70,8 @@
 		B923E384231D6CA300789346 /* Date+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+extensions.swift"; sourceTree = "<group>"; };
 		B923E386231D719700789346 /* String+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+extensions.swift"; sourceTree = "<group>"; };
 		B923E388231DD1A100789346 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		B923E38A231E3FBC00789346 /* UIImageView+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+extensions.swift"; sourceTree = "<group>"; };
+		B923E391231E42C600789346 /* UIImageViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +131,7 @@
 		B923E329231D056D00789346 /* FlickrSearchTests */ = {
 			isa = PBXGroup;
 			children = (
+				B923E38C231E426000789346 /* ImageCachingTests */,
 				B923E37F231D61EB00789346 /* FlickrServiceTests */,
 				B923E32A231D056D00789346 /* FlickrSearchTests.swift */,
 				B923E32C231D056D00789346 /* Info.plist */,
@@ -220,8 +225,17 @@
 			children = (
 				B923E384231D6CA300789346 /* Date+extensions.swift */,
 				B923E386231D719700789346 /* String+extensions.swift */,
+				B923E38A231E3FBC00789346 /* UIImageView+extensions.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		B923E38C231E426000789346 /* ImageCachingTests */ = {
+			isa = PBXGroup;
+			children = (
+				B923E391231E42C600789346 /* UIImageViewTests.swift */,
+			);
+			path = ImageCachingTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -331,6 +345,7 @@
 				B923E36D231D2BDA00789346 /* DateHandler.swift in Sources */,
 				B923E372231D358D00789346 /* FlickrImageData.swift in Sources */,
 				B923E387231D719700789346 /* String+extensions.swift in Sources */,
+				B923E38B231E3FBC00789346 /* UIImageView+extensions.swift in Sources */,
 				B923E35E231D066E00789346 /* FlickrSearchResults.swift in Sources */,
 				B923E374231D3F0200789346 /* FlickrServiceError.swift in Sources */,
 				B923E389231DD1A100789346 /* MainViewController.swift in Sources */,
@@ -349,6 +364,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B923E392231E42C600789346 /* UIImageViewTests.swift in Sources */,
 				B923E37E231D5C2700789346 /* FlickrParseTests.swift in Sources */,
 				B923E32B231D056D00789346 /* FlickrSearchTests.swift in Sources */,
 			);

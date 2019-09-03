@@ -10,8 +10,6 @@ import Foundation
 import UIKit
 
 class FlickrPhoto {
-    @objc dynamic var thumbnail: UIImage?
-    
     @objc dynamic var description: String
     @objc dynamic var authorId: String
     @objc dynamic var dateTaken: Date
@@ -35,8 +33,6 @@ class FlickrPhoto {
         self.author = author
         self.mediaLink = mediaLink
         self.media = mediaArray.values.first ?? ""
-        
-        loadImage()
     }
     
     convenience init(imageData: FlickrImageData) {
@@ -47,20 +43,5 @@ class FlickrPhoto {
                   title: imageData.title,
                   mediaLink: imageData.mediaLink,
                   mediaArray: imageData.media)
-    }
-    
-    func flickrImageURL() -> URL? {
-        if let url =  URL(string: media) {
-            return url
-        }
-        return nil
-    }
-    
-    func loadImage() {
-        if let url = flickrImageURL(),
-            let imageData = try? Data(contentsOf: url as URL),
-            let image = UIImage(data: imageData) {
-            thumbnail = image
-        }
     }
 }
